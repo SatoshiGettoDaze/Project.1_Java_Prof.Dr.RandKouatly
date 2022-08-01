@@ -75,7 +75,6 @@ public class testMain {
 			if((volumeOfRemainingProduct/cubicMetersPerKilogram) > 500) {
 				cost1 = amountOfBig*1800 + amountOfSmall*1200;
 			}
-			
 		}
 		
 		/*
