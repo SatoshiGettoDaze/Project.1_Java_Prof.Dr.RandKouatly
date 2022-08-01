@@ -40,8 +40,7 @@ public class testMain {
 		totalWeight = laptop*6.5 + mouse*0.2 + desktop*20 + lcd*2.6;
 		System.out.println("The total Weighth of the Shipment: " + totalWeight + " kg");
 
-		double maxLoadOfSmallContainer = (totalWeight/totalVolume)*volumeOfSmallContainer;
-		
+		double maxLoadOfSmallContainer = (totalWeight/totalVolume)*volumeOfSmallContainer;		
 		System.out.println("The Volume Of Small Container: " + volumeOfSmallContainer + " m^3");
 		System.out.println("The max Load Of Small Container: " + maxLoadOfSmallContainer + " kg");
 		System.out.println("The Volume Of Big Container: " + volumeOfBigContainer + " m^3");
