@@ -39,8 +39,11 @@ public class testMain {
 		
 		totalWeight = laptop*6.5 + mouse*0.2 + desktop*20 + lcd*2.6;
 		System.out.println("The total Weighth of the Shipment: " + totalWeight + " kg");
+
+		double maxLoadOfSmallContainer = (totalWeight/totalVolume)*volumeOfSmallContainer;
 		
 		System.out.println("The Volume Of Small Container: " + volumeOfSmallContainer + " m^3");
+		System.out.println("The max Load Of Small Container: " + maxLoadOfSmallContainer + " kg");
 		System.out.println("The Volume Of Big Container: " + volumeOfBigContainer + " m^3");
 		System.out.println("------------------------------------------------");
 		
@@ -51,7 +54,7 @@ public class testMain {
 		amountOfBig = Math.ceil(totalVolume/volumeOfBigContainer);
 		cost1 = amountOfBig*1800;
 		
-		//Reduce a large container and add a small container,until the price is lowest
+		//Reduce a large container and add ? small container,until the price is lowest
 		double amountTemp = 0;
 		while (cost1 < cost2)
 		{
@@ -62,8 +65,27 @@ public class testMain {
 				break;
 			}
 			double cubicMetersPerKilogram = totalVolume/totalWeight;
-			amountOfSmall = Math.ceil(((totalVolume-amountOfBig*volumeOfBigContainer)/cubicMetersPerKilogram)/500);	
-			cost1 = amountOfBig*1800 + amountOfSmall*1000;
+			//double weightOfRemainingProduct = (totalVolume-amountOfBig*volumeOfBigContainer)/cubicMetersPerKilogram;
+			double volumeOfRemainingProduct = totalVolume - amountOfBig*volumeOfBigContainer;
+			amountOfSmall = Math.ceil(volumeOfRemainingProduct/volumeOfSmallContainer);
+			
+			if((volumeOfRemainingProduct/cubicMetersPerKilogram) <= 500){
+				cost1 = amountOfBig*1800 + amountOfSmall*1000;
+			}
+			if((volumeOfRemainingProduct/cubicMetersPerKilogram) > 500) {
+				cost1 = amountOfBig*1800 + amountOfSmall*1200;
+			}
+			/*
+			if(weightOfRemainingProduct < maxLoadOfSmallContainer && weightOfRemainingProduct < 500) {
+				//amountOfSmall = Math.ceil(weightOfRemainingProduct/500);
+				amountOfSmall = 1;
+				cost1 = amountOfBig*1800 + amountOfSmall*1000;
+			}
+			if(weightOfRemainingProduct > 500 && weightOfRemainingProduct > maxLoadOfSmallContainer) {
+				amountOfSmall = Math.ceil(weightOfRemainingProduct/maxLoadOfSmallContainer);
+				cost1 = amountOfBig*1800 + amountOfSmall*1200;
+			}*/
+			
 		}
 		
 		
