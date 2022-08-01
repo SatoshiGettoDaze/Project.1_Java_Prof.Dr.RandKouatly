@@ -75,16 +75,6 @@ public class testMain {
 			if((volumeOfRemainingProduct/cubicMetersPerKilogram) > 500) {
 				cost1 = amountOfBig*1800 + amountOfSmall*1200;
 			}
-			/*
-			if(weightOfRemainingProduct < maxLoadOfSmallContainer && weightOfRemainingProduct < 500) {
-				//amountOfSmall = Math.ceil(weightOfRemainingProduct/500);
-				amountOfSmall = 1;
-				cost1 = amountOfBig*1800 + amountOfSmall*1000;
-			}
-			if(weightOfRemainingProduct > 500 && weightOfRemainingProduct > maxLoadOfSmallContainer) {
-				amountOfSmall = Math.ceil(weightOfRemainingProduct/maxLoadOfSmallContainer);
-				cost1 = amountOfBig*1800 + amountOfSmall*1200;
-			}*/
 			
 		}
 		
