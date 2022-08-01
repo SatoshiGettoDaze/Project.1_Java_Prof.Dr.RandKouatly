@@ -86,5 +86,4 @@ public class testMain {
 		System.out.println("The amount of big container:" + amountOfBig);
 		System.out.println("The amount of small container:" + amountTemp);
 	}
-
 }
