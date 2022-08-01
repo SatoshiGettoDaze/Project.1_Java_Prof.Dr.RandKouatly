@@ -54,7 +54,7 @@ public class testMain {
 		amountOfBig = Math.ceil(totalVolume/volumeOfBigContainer);
 		cost1 = amountOfBig*1800;
 		
-		//Reduce a large container and add ? small container,until the price is lowest
+		//Reduce a large container and add small container,until the price is lowest
 		double amountTemp = 0;
 		while (cost1 < cost2)
 		{
@@ -86,8 +86,6 @@ public class testMain {
 		System.out.println("The optimal solution is " + cost2 + " euro");
 		System.out.println("The amount of big container:" + amountOfBig);
 		System.out.println("The amount of small container:" + amountTemp);
-			
-
 	}
 
 }
